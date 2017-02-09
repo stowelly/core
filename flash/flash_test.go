@@ -7,8 +7,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/blue-jay/core/flash"
-	"github.com/blue-jay/core/view"
+	"github.com/stowelly/core/flash"
+	"github.com/stowelly/core/view"
 )
 
 // Session is an interface for typical sessions

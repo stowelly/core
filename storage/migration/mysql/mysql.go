@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/blue-jay/core/storage"
-	driver "github.com/blue-jay/core/storage/driver/mysql"
-	"github.com/blue-jay/core/storage/migration"
+	"github.com/stowelly/core/storage"
+	driver "github.com/stowelly/core/storage/driver/mysql"
+	"github.com/stowelly/core/storage/migration"
 	"github.com/jmoiron/sqlx"
 )
 

@@ -2,6 +2,8 @@
 package view
 
 import (
+	"encoding/json"
+	"fmt"
 	"html/template"
 	"net/http"
 	"os"
@@ -130,5 +132,19 @@ func (v *Info) Render(w http.ResponseWriter, r *http.Request) error {
 		http.Error(w, "Template File Error: "+err.Error(), http.StatusInternalServerError)
 	}
 
+	return err
+}
+
+func (v *Info) Json(w http.ResponseWriter, r *http.Request) error {
+
+	// Get the modify list
+	sc := v.modify()
+	// Loop through and call each one
+	for _, fn := range sc {
+		fn(w, r, v)
+	}
+
+	jsonString, err := json.Marshal(v.Vars)
+	fmt.Fprintf(w, string(jsonString))
 	return err
 }
