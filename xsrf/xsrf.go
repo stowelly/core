@@ -4,8 +4,8 @@ package xsrf
 import (
 	"net/http"
 
-	"github.com/stowelly/core/view"
 	"github.com/gorilla/csrf"
+	"github.com/stowelly/core/view"
 )
 
 // Info holds the config.
@@ -16,5 +16,5 @@ type Info struct {
 
 // Token sets token in the template to the CSRF token.
 func Token(w http.ResponseWriter, r *http.Request, v *view.Info) {
-	v.Vars["token"] = csrf.Token(r)
+	w.Header().Set("X-CSRF-Token", csrf.Token(r))
 }
