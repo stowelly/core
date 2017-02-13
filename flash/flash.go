@@ -18,7 +18,7 @@ var (
 	// Warning is a bootstrap class
 	Warning = "alert-warning"
 	// Standard is the default class
-	Standard = "alert-box"
+	Standard = "alert-info"
 )
 
 // Info Flash Message
